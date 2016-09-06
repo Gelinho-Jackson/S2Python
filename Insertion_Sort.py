@@ -9,16 +9,16 @@ def insertion_sort(seq):
     :param seq: lista como numeros
     :return seq: retorna mesma lista organizada por valor
     '''
-    if len(seq) <= 1:
-        return seq
-    local = 1
-    for i in range(1, len(seq)+1):
-        local = i - 1;
-        while local != 0:
-            if seq[local] < seq[local-1]:
-                seq[local], seq[local-1] = seq[local-1], seq[local]
-            local -= 1
-    return seq
+def insertion(v):
+
+    for j in range (1,len(v)):
+        x=v[j]
+        i= j-1
+        while i>=0 and v[i]>x :
+            v[i+1] = v[i]
+            i-=1
+        v[i+1]=x
+    return v
 
 
 class OrdenacaoTestes(unittest.TestCase):
